@@ -1,12 +1,13 @@
 import styles from "./styles.module.css";
 
 export type ButtonProps = {
+  type?: "submit" | "button" | "reset";
   label: string;
 };
 
-function Button({ label }: ButtonProps) {
+function Button({ type = "button", label }: ButtonProps) {
   return (
-    <button className={`${styles.button}`} type="button">
+    <button type={type} className={`${styles.button}`}>
       {label}
     </button>
   );

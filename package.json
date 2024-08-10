@@ -1,9 +1,9 @@
 {
-  "name": "vitejs-lib-config",
+  "name": "simplegems",
   "version": "0.0.0",
   "type": "module",
-  "main": "dist/my-lib.umd.js",
-  "module": "dist/my-lib.es.js",
+  "main": "dist/simplegems.umd.js",
+  "module": "dist/simplegems.es.js",
   "types": "dist/lib/index.d.ts",
   "files": [
     "dist"

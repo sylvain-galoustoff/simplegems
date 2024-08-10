@@ -20,7 +20,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/lib/index.ts"), // Point d'entrée de la bibliothèque
       name: "MyLib", // Nom global pour les utilisateurs UMD
-      fileName: (format) => `my-lib.${format}.js`, // Nom du fichier de sortie
+      fileName: (format) => `simplegems.${format}.js`, // Nom du fichier de sortie
       formats: ["es", "umd"],
     },
     rollupOptions: {
