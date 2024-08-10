@@ -1,3 +1,18 @@
 :root {
   --primary: #8767E4;
+  --primaryHover: #987DE8;
+  --success: #33CC59;
+  --successHover: #79D28F;
+  --warning: #DBAD51;
+  --warningHover: #D2B579;
+  --danger: #CC6666;
+  --dangerHover: #D27979;
+  --text: #6A6284;
+  --textAlt: #878198;
+  --bg: #E4E2E9;
+  --card: #FFFFFF;
+
+  --corner: 4px;
+
+  --transitionTime: .15s;
 }
