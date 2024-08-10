@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "declaration": true, // Générer les fichiers de définition de types (.d.ts)
+    "declarationDir": "dist/lib", // Répertoire de sortie pour les fichiers de définition de types
+    "emitDeclarationOnly": false, // Ne pas générer les fichiers JS, seulement les .d.ts
+    "outDir": "dist", // Répertoire de sortie pour les fichiers compilés
+    "strict": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "esModuleInterop": true, // Facilite l'importation des modules CommonJS comme les modules ES
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node"] // Inclut les types Node.js
+  },
+  "include": ["src/lib"],
+  "exclude": ["node_modules", "dist"]
+}
