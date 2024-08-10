@@ -1,5 +1,4 @@
 import styles from "./styles.module.css";
-import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
 
 export type InputFieldProps = {
   label: string;
