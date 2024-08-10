@@ -1,3 +1,9 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .label {
   color: var(--textAlt);
   font-weight: 700;
