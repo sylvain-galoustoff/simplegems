@@ -1,12 +1,14 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import { libInjectCss } from "vite-plugin-lib-inject-css";
 import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    libInjectCss(),
     dts({
       include: "src/lib", // Chemin vers les fichiers sources TypeScript
       outDir: "dist/lib", // Répertoire de sortie pour les fichiers .d.ts
