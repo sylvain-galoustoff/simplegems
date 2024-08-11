@@ -6,7 +6,7 @@ import {
   IoShieldCheckmark,
 } from "react-icons/io5";
 import type { Meta, StoryObj } from "@storybook/react";
-import InputField from "./index";
+import InputField from "../lib/Forms/InputField/index";
 import React from "react";
 
 const meta: Meta<typeof InputField> = {

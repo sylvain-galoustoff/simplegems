@@ -14,6 +14,7 @@ export default defineConfig({
       outDir: "dist/lib", // Répertoire de sortie pour les fichiers .d.ts
       rollupTypes: true,
       copyDtsFiles: true,
+      exclude: ["**/*.stories.tsx"],
     }),
   ],
   build: {
@@ -25,11 +26,20 @@ export default defineConfig({
     },
     rollupOptions: {
       // Assurez-vous d'exclure les dépendances externes de la bibliothèque
-      external: ["react", "react-dom"],
+      external: [
+        "react",
+        "react-dom",
+        "@storybook/react",
+        "@storybook/addons",
+        "@storybook/theming",
+      ],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          "@storybook/react": "StorybookReact",
+          "@storybook/addons": "StorybookAddons",
+          "@storybook/theming": "StorybookTheming",
         },
       },
     },

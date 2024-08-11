@@ -8,7 +8,7 @@ export type ButtonProps = {
   className?: string;
   iconBefore?: JSX.Element;
   iconAfter?: JSX.Element;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 function Button({

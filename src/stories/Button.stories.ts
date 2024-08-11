@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Button from "./index";
+import Button from "../lib/Button";
 import { IoArrowBackCircle, IoArrowForwardCircle } from "react-icons/io5";
 import React from "react";
 
-const meta = {
+const meta: Meta<typeof Button> = {
   title: "Button",
   component: Button,
   parameters: {

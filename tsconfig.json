@@ -14,6 +14,10 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["node"] // Inclut les types Node.js
   },
-  "include": ["src/lib"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src/lib",
+    "src/stories/Button.stories.ts",
+    "src/stories/InputField.stories.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.story.tsx"]
 }
