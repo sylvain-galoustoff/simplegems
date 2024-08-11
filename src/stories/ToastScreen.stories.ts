@@ -7,7 +7,6 @@ export default {
   parameters: {
     layout: "fullscreen",
   },
-  argTypes: {},
 };
 
 export const Default = {

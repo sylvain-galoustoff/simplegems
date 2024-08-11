@@ -7,13 +7,13 @@ import "./styles.css";
 export type ToastScreenType = {
   toastType: "success" | "warning" | "danger";
   toastMessage: string;
-  automaticRemove: boolean;
+  automaticRemove?: boolean;
 };
 
 function ToastScreen({
   toastType,
   toastMessage,
-  automaticRemove = true,
+  automaticRemove = false,
 }: ToastScreenType) {
   const { toastList, removeToast } = useToastsList();
   const sendToast = useToast();
