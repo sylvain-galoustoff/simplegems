@@ -16,7 +16,14 @@ const meta: Meta<typeof InputField> = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    iconAfter: {
+      control: false,
+    },
+    iconBefore: {
+      control: false,
+    },
+  },
 };
 
 export default meta;

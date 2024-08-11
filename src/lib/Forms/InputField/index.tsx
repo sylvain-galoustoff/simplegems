@@ -6,8 +6,8 @@ export type InputFieldProps = {
   type: "text" | "email" | "tel" | "search" | "password";
   placeholder?: string;
   variant?: "primary" | "success" | "danger" | "warning";
-  iconBefore?: React.ReactNode;
-  iconAfter?: React.ReactNode;
+  iconBefore?: JSX.Element;
+  iconAfter?: JSX.Element;
 };
 
 function InputField({
