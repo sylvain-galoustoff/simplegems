@@ -5,20 +5,22 @@ export type InputFieldProps = {
   id: string;
   type: "text" | "email" | "tel" | "search";
   placeholder?: string;
-  iconBefore?: JSX.Element;
-  iconAfter?: JSX.Element;
+  variant?: "primary" | "success" | "danger" | "warning";
+  iconBefore?: React.ReactNode;
+  iconAfter?: React.ReactNode;
 };
 
 function InputField({
   label,
   id,
   type,
+  variant = "primary",
   placeholder,
   iconBefore,
   iconAfter,
 }: InputFieldProps) {
   return (
-    <div className={`${styles.formGroup}`}>
+    <div className={`${styles.formGroup} ${styles[variant]}`}>
       <label className={`${styles.label}`} htmlFor={id}>
         {label}
       </label>

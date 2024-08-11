@@ -4,6 +4,30 @@
   gap: 4px;
 }
 
+.success .inputGroup {
+  border-color: var(--success);
+}
+
+.success .icon {
+  color: var(--success);
+}
+
+.warning .inputGroup {
+  border-color: var(--warning);
+}
+
+.warning .icon {
+  color: var(--warning);
+}
+
+.danger .inputGroup {
+  border-color: var(--danger);
+}
+
+.danger .icon {
+  color: var(--danger);
+}
+
 .label {
   color: var(--textAlt);
   font-weight: 700;
