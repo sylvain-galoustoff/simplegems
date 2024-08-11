@@ -8,6 +8,7 @@ export type ButtonProps = {
   className?: string;
   iconBefore?: JSX.Element;
   iconAfter?: JSX.Element;
+  onClick: () => void;
 };
 
 function Button({
@@ -18,6 +19,7 @@ function Button({
   className,
   iconBefore,
   iconAfter,
+  onClick,
 }: ButtonProps) {
   return (
     <button
@@ -26,6 +28,7 @@ function Button({
         className ? className : ""
       }`}
       id={id}
+      onClick={onClick}
     >
       {iconBefore && iconBefore}
       {label}
