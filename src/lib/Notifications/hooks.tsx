@@ -33,11 +33,11 @@ export const useToastsList = () => {
 };
 
 export const useToast = () => {
-  const dispatchToast = (type: string, message: string) => {
+  const dispatchToast = (variant: string, message: string) => {
     const toastEvent = new CustomEvent("addToast", {
       detail: {
         id: Date.now(),
-        type,
+        variant,
         message,
       },
     });
