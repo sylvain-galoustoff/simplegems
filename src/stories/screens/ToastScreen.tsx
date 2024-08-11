@@ -7,9 +7,14 @@ import "./styles.css";
 export type ToastScreenType = {
   toastType: "success" | "warning" | "danger";
   toastMessage: string;
+  automaticRemove: boolean;
 };
 
-function ToastScreen({ toastType, toastMessage }: ToastScreenType) {
+function ToastScreen({
+  toastType,
+  toastMessage,
+  automaticRemove = true,
+}: ToastScreenType) {
   const { toastList, removeToast } = useToastsList();
   const sendToast = useToast();
 
@@ -23,6 +28,7 @@ function ToastScreen({ toastType, toastMessage }: ToastScreenType) {
         id="taoster-in-screen"
         toastsList={toastList}
         onRemoveToast={removeToast}
+        automaticRemove={automaticRemove}
       />
       <Button variant="primary" label="Send toast" onClick={handleToast} />
     </div>

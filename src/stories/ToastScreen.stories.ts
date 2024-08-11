@@ -7,12 +7,7 @@ export default {
   parameters: {
     layout: "fullscreen",
   },
-  argTypes: {
-    // toastType: {
-    //   options: ["success", "warning", "danger"],
-    //   control: { type: "inline-radio" },
-    // },
-  },
+  argTypes: {},
 };
 
 export const Default = {
