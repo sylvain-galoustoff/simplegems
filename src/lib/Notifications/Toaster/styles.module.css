@@ -1,0 +1,56 @@
+.toaster {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.toast {
+  width: 100%;
+  background-color: var(--card);
+  border-radius: var(--corner);
+  overflow: hidden;
+  color: var(--text);
+}
+
+.primary .header {
+  background-color: var(--primary);
+}
+
+.primary .body {
+  background-color: var(--primaryBg);
+}
+
+.success .header {
+  background-color: var(--success);
+}
+
+.success .body {
+  background-color: var(--successBg);
+}
+
+.warning .header {
+  background-color: var(--warning);
+}
+
+.warning .body {
+  background-color: var(--warningBg);
+}
+
+.danger .header {
+  background-color: var(--danger);
+}
+
+.danger .body {
+  background-color: var(--dangerBg);
+}
+
+.header {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: flex-end;
+  color: var(--card);
+}
+
+.body {
+  padding: 8px 16px;
+}
