@@ -41,7 +41,7 @@ function Toast({
 
   return (
     <div
-      className={`${styles.toast} ${styles[variant]} ${styles[animation]} ${removing && styles.removing}`}
+      className={`${styles.toast} ${styles[variant]} ${styles[animation]} ${removing && styles.removing} toast`}
     >
       <div className={`${styles.header}`}>
         {automaticRemove && <div className={`${styles.progress}`} />}
