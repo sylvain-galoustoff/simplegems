@@ -43,8 +43,8 @@ function Toast({
     <div
       className={`${styles.toast} ${styles[variant]} ${styles[animation]} ${removing && styles.removing} toast`}
     >
+      {automaticRemove && <div className={`${styles.progress}`} />}
       <div className={`${styles.header}`}>
-        {automaticRemove && <div className={`${styles.progress}`} />}
         <IoCloseCircleOutline onClick={deleteToast} />
       </div>
       <div className={`${styles.body}`}>{message}</div>
