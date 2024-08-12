@@ -20,21 +20,21 @@ export const Defaut: Story = {
     toastsList: [
       {
         ...ToastStories.Defaut.args,
-        id: 1,
-        variant: "danger",
-        message: "Test",
+        id: 3,
+        variant: "success",
+        message: "Every little thing gonna be all right.",
       },
       {
         ...ToastStories.Defaut.args,
         id: 2,
         variant: "warning",
-        message: "Test",
+        message: "Don't push the button !",
       },
       {
         ...ToastStories.Defaut.args,
-        id: 3,
-        variant: "success",
-        message: "Test",
+        id: 1,
+        variant: "danger",
+        message: "The world is about to explode !",
       },
     ],
   },

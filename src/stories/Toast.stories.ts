@@ -17,23 +17,27 @@ type Story = StoryObj<typeof meta>;
 export const Defaut: Story = {
   args: {
     variant: "primary",
+    message: "Toast message here.",
   },
 };
 
 export const Success: Story = {
   args: {
     variant: "success",
+    message: "Every little thing gonna be all right.",
   },
 };
 
 export const Warning: Story = {
   args: {
     variant: "warning",
+    message: "Don't push the button !",
   },
 };
 
 export const Danger: Story = {
   args: {
     variant: "danger",
+    message: "The world is about to explode !",
   },
 };
