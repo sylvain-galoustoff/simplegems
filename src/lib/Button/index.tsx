@@ -8,7 +8,7 @@ export type ButtonProps = {
   className?: string;
   iconBefore?: JSX.Element;
   iconAfter?: JSX.Element;
-  isLoading: boolean;
+  isLoading?: boolean;
   onClick?: () => void;
 };
 
@@ -18,7 +18,7 @@ function Button({
   label,
   id,
   className,
-  isLoading = true,
+  isLoading = false,
   iconBefore,
   iconAfter,
   onClick,
