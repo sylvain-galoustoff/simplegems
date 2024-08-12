@@ -8,6 +8,7 @@ export type ButtonProps = {
   className?: string;
   iconBefore?: JSX.Element;
   iconAfter?: JSX.Element;
+  isLoading: boolean;
   onClick?: () => void;
 };
 
@@ -17,6 +18,7 @@ function Button({
   label,
   id,
   className,
+  isLoading = true,
   iconBefore,
   iconAfter,
   onClick,
@@ -24,7 +26,7 @@ function Button({
   return (
     <button
       type={type}
-      className={`${styles.button} ${variant ? styles[variant] : ""} ${
+      className={`${styles.button} ${variant ? styles[variant] : ""} ${isLoading ? styles.loading : ""} ${
         className ? className : ""
       }`}
       id={id}
