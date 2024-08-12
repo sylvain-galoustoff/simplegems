@@ -23,14 +23,14 @@ function ToastScreen({
   };
 
   return (
-    <div className="screen">
+    <div className="screen" id="toaster-screen">
+      <Button variant="primary" label="Send toast" onClick={handleToast} />
       <Toaster
         id="taoster-in-screen"
         toastsList={toastList}
         onRemoveToast={removeToast}
         automaticRemove={automaticRemove}
       />
-      <Button variant="primary" label="Send toast" onClick={handleToast} />
     </div>
   );
 }
