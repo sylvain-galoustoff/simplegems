@@ -1,0 +1,55 @@
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  background-color: var(--card);
+  font-size: 1.1rem;
+}
+
+.tableRow {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.th {
+  color: var(--text);
+  text-align: left;
+  padding: 16px 8px;
+}
+
+.tbody .tableRow:nth-child(odd) .td {
+  background-color: var(--cardAlt);
+}
+
+.tbody .tableRow:nth-child(even) .td {
+  background-color: var(--card);
+}
+
+.td {
+  text-align: left;
+  padding: 0;
+  display: flex;
+}
+
+.cellForm {
+  width: 100%;
+  flex: 1;
+}
+
+.cellInput {
+  font-size: 1rem;
+  padding: 16px 8px;
+  width: 100%;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--textAlt);
+}
+
+.cellInput:focus,
+.cellInput:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+}

@@ -15,8 +15,15 @@
   --textAlt: #878198;
   --bg: #E4E2E9;
   --card: #FFFFFF;
+  --cardAlt: #F4F4F4;
 
   --corner: 4px;
 
   --transitionTime: .15s;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
