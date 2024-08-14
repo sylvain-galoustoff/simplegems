@@ -30,7 +30,7 @@ export const Defaut: Story = {
     columns: ["gender", "firstName", "lastName"],
     labels: {
       gender: "Genre",
-      firstname: "Prénom",
+      firstName: "Prénom",
       lastName: "Nom",
     },
   },
