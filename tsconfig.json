@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "declaration": true, // Générer les fichiers de définition de types (.d.ts)
-    "declarationDir": "dist/lib", // Répertoire de sortie pour les fichiers de définition de types
+    "declarationDir": "node_modules/dist/lib", // Répertoire de sortie pour les fichiers de définition de types
     "emitDeclarationOnly": false, // Ne pas générer les fichiers JS, seulement les .d.ts
-    "outDir": "dist", // Répertoire de sortie pour les fichiers compilés
+    "outDir": "node_modules/dist", // Répertoire de sortie pour les fichiers compilés
     "strict": true,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -19,5 +19,5 @@
     "src/stories/Button.stories.ts",
     "src/stories/InputField.stories.ts"
   ],
-  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.story.tsx"]
+  "exclude": ["node_modules", "node_modules/dist", "**/*.stories.tsx", "**/*.story.tsx"]
 }

@@ -1,13 +1,16 @@
+import { ChangeEventHandler } from "react";
 import styles from "./styles.module.css";
 
-export type TableCellProps = {
-  field: string;
+export type TableCellProp = {
   value: string;
+  field: string;
 };
 
-function TableCell({ field, value }: TableCellProps) {
-  const setInputValue = (inputValue: string) => {
-    console.log(field + ":" + inputValue);
+function TableCell({ field, value }: TableCellProp) {
+  console.log(field);
+
+  const updateField: ChangeEventHandler<HTMLInputElement> = (e) => {
+    console.log(e.target.value);
   };
 
   return (
@@ -17,7 +20,7 @@ function TableCell({ field, value }: TableCellProps) {
           type="text"
           className={`${styles.cellInput}`}
           value={value ? value : "non renseigné"}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e) => updateField(e)}
         />
       </form>
     </td>

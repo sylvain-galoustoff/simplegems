@@ -1,16 +1,23 @@
 .dataTable {
   width: 100%;
   border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
 }
 
 .tableHeader {
   background-color: var(--card);
+  border-top-left-radius: var(--corner);
+  border-top-right-radius: var(--corner);
   font-size: 1.1rem;
+  display: flex;
+  width: 100%;
 }
 
 .tableRow {
-  overflow: hidden;
+  width: 100%;
   display: grid;
+  overflow: hidden;
 }
 
 .th {
@@ -25,6 +32,11 @@
 
 .tbody .tableRow:nth-child(even) .td {
   background-color: var(--card);
+}
+
+.tbody .tableRow:last-child {
+  border-bottom-left-radius: var(--corner);
+  border-bottom-right-radius: var(--corner);
 }
 
 .td {

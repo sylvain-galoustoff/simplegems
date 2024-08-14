@@ -27,19 +27,11 @@ export const Defaut: Story = {
         age: "22",
       },
     ],
-    columns: [
-      {
-        field: "firstName",
-        label: "Nom",
-      },
-      {
-        field: "lastName",
-        label: "Prénom",
-      },
-      {
-        field: "gender",
-        label: "Genre",
-      },
-    ],
+    columns: ["gender", "firstName", "lastName"],
+    labels: {
+      gender: "Genre",
+      firstname: "Prénom",
+      lastName: "Nom",
+    },
   },
 };

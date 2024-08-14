@@ -1,6 +1,6 @@
 {
   "name": "simplegems",
-  "version": "0.0.11",
+  "version": "0.0.14",
   "type": "module",
   "main": "dist/simplegems.umd.js",
   "module": "dist/simplegems.es.js",
@@ -29,6 +29,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
     "@eslint/js": "^9.8.0",
+    "@microsoft/api-extractor": "^7.47.6",
     "@storybook/addon-essentials": "^8.2.8",
     "@storybook/addon-interactions": "^8.2.8",
     "@storybook/addon-links": "^8.2.8",

@@ -1,13 +1,15 @@
+import { Label } from ".";
 import styles from "./styles.module.css";
 
-export type TableHeaderTypes = {
-  columns: Record<string, string>[];
+type TableHeaderProps = {
+  columns: string[];
+  labels: Label;
 };
 
-function TableHeader({ columns }: TableHeaderTypes) {
-  const renderColumns = columns.map((cell, index) => (
-    <th key={`th-${index}`} className={`${styles.th}`}>
-      <span className="column-label">{cell.label}</span>
+function TableHeader({ columns, labels }: TableHeaderProps) {
+  const renderCells = columns.map((cell) => (
+    <th key={`th-${cell}`} className={`${styles.th}`}>
+      <span className={`${styles.columnLabel}`}>{labels[cell]}</span>
     </th>
   ));
 
@@ -17,7 +19,7 @@ function TableHeader({ columns }: TableHeaderTypes) {
         className={`${styles.tableRow}`}
         style={{ gridTemplateColumns: `repeat(${columns.length}, 1fr)` }}
       >
-        {renderColumns}
+        {renderCells}
       </tr>
     </thead>
   );

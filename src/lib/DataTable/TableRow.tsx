@@ -1,19 +1,18 @@
-import TableCell from "./TableCell";
 import styles from "./styles.module.css";
 
+import { Label, Row } from ".";
+import TableCell from "./TableCell";
+
 export type TableRowProps = {
-  cells: Record<string, string>;
-  columns: Record<string, string>[];
+  row: Row;
+  columns: string[];
+  labels: Label;
 };
 
-function TableRow({ cells, columns }: TableRowProps) {
-  const columsFields = columns.map((column) => column["field"]);
-  const renderCells = Object.keys(cells).map(
-    (cell) =>
-      columsFields.includes(cell) && (
-        <TableCell key={cell} field={cell} value={cells[cell]} />
-      )
-  );
+function TableRow({ row, columns, labels }: TableRowProps) {
+  const renderCells = columns.map((cell, index) => (
+    <TableCell key={index} field={cell} value={row[cell]} />
+  ));
 
   return (
     <tr
