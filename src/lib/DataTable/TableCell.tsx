@@ -18,7 +18,7 @@ function TableCell({ field, value }: TableCellProp) {
       <form className={`${styles.cellForm}`}>
         <input
           type="text"
-          className={`${styles.cellInput}`}
+          className={`${styles.cellInput} ${!value ? styles.nodata : ""}`}
           value={value ? value : "non renseigné"}
           onChange={(e) => updateField(e)}
         />

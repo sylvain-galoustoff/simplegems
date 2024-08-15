@@ -24,6 +24,7 @@
   color: var(--text);
   text-align: left;
   padding: 16px 8px;
+  font-weight: bold;
 }
 
 .tbody .tableRow:nth-child(odd) .td {
@@ -64,4 +65,8 @@
 .cellInput:focus-visible {
   outline: none;
   border-color: var(--primary);
+}
+
+.nodata {
+  font-style: italic;
 }
