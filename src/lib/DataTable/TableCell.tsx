@@ -10,7 +10,7 @@ function TableCell({ field, value }: TableCellProp) {
   console.log(field);
 
   const updateField: ChangeEventHandler<HTMLInputElement> = (e) => {
-    console.log(e.target.value);
+    return null;
   };
 
   return (

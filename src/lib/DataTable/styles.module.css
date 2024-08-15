@@ -1,23 +1,41 @@
 .dataTable {
   border-collapse: collapse;
+  width: 100%;
+  position: relative;
 }
 
 .tableHeader {
-  background-color: var(--card);
   color: var(--text);
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+.tableHeader .tableRow {
+  background-color: var(--card);
+  border-top-left-radius: var(--corner);
+  border-top-right-radius: var(--corner);
+  overflow: hidden;
+}
+
+.tableRow {
+  display: grid;
+  background-color: var(--card);
 }
 
 .th {
   text-align: left;
-  padding: 8px 16px;
+  padding: 16px;
+  font-weight: bold;
 }
 
 .tbody .tableRow:nth-child(odd) {
   background-color: var(--cardAlt);
 }
 
-.tbody .tableRow:nth-child(even) {
-  background-color: var(--card);
+.tbody .tableRow:last-child {
+  border-bottom-left-radius: var(--corner);
+  border-bottom-right-radius: var(--corner);
 }
 
 .td {
@@ -44,6 +62,9 @@
 
 .deleteButton {
   border-radius: 0 !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .deleteButton:hover {

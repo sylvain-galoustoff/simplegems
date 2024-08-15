@@ -28,7 +28,7 @@ function TableRow({
     <tr
       className={`${styles.tableRow}`}
       style={{
-        gridTemplateColumns: `repeat(${columns.length}, 1fr) 50px}`,
+        gridTemplateColumns: `repeat(${columns.length}, 1fr) 50px`,
       }}
     >
       {renderCells}
