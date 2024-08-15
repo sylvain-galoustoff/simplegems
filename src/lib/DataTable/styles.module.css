@@ -1,72 +1,52 @@
 .dataTable {
-  width: 100%;
   border-collapse: collapse;
-  display: flex;
-  flex-direction: column;
 }
 
 .tableHeader {
   background-color: var(--card);
-  border-top-left-radius: var(--corner);
-  border-top-right-radius: var(--corner);
-  font-size: 1.1rem;
-  display: flex;
-  width: 100%;
-}
-
-.tableRow {
-  width: 100%;
-  display: grid;
-  overflow: hidden;
+  color: var(--text);
 }
 
 .th {
-  color: var(--text);
   text-align: left;
-  padding: 16px 8px;
-  font-weight: bold;
+  padding: 8px 16px;
 }
 
-.tbody .tableRow:nth-child(odd) .td {
+.tbody .tableRow:nth-child(odd) {
   background-color: var(--cardAlt);
 }
 
-.tbody .tableRow:nth-child(even) .td {
+.tbody .tableRow:nth-child(even) {
   background-color: var(--card);
 }
 
-.tbody .tableRow:last-child {
-  border-bottom-left-radius: var(--corner);
-  border-bottom-right-radius: var(--corner);
-}
-
 .td {
-  text-align: left;
   padding: 0;
-  display: flex;
-}
-
-.cellForm {
-  width: 100%;
-  flex: 1;
-  color: var(--textAlt);
 }
 
 .cellInput {
-  font-size: 1rem;
-  padding: 16px 8px;
-  width: 100%;
   border: 1px solid transparent;
   background-color: transparent;
   color: var(--textAlt);
+  font-size: 1rem;
+  padding: 8px 16px;
 }
 
 .cellInput:focus,
 .cellInput:focus-visible {
+  border: 1px solid var(--primary);
   outline: none;
-  border-color: var(--primary);
 }
 
 .nodata {
   font-style: italic;
+}
+
+.deleteButton {
+  border-radius: 0 !important;
+}
+
+.deleteButton:hover {
+  background-color: var(--danger);
+  color: var(--card);
 }

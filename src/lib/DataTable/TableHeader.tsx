@@ -1,3 +1,4 @@
+import { IoCloseOutline } from "react-icons/io5";
 import { Label } from ".";
 import styles from "./styles.module.css";
 
@@ -17,9 +18,10 @@ function TableHeader({ columns, labels }: TableHeaderProps) {
     <thead className={`${styles.tableHeader}`}>
       <tr
         className={`${styles.tableRow}`}
-        style={{ gridTemplateColumns: `repeat(${columns.length}, 1fr)` }}
+        style={{ gridTemplateColumns: `repeat(${columns.length}, 1fr) 50px` }}
       >
         {renderCells}
+        <th className={`${styles.th}`}></th>
       </tr>
     </thead>
   );

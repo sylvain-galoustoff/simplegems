@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 export type ButtonProps = {
   type?: "submit" | "button" | "reset";
   variant?: "primary" | "success" | "danger" | "warning";
-  label: string;
+  label: string | JSX.Element;
   id?: string;
   className?: string;
   iconBefore?: JSX.Element;

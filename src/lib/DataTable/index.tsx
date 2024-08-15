@@ -14,11 +14,26 @@ export type DataTableProps = {
   rows: Row[];
   columns: string[];
   labels: Label;
+  deleteButton?: boolean;
+  onDelete?: (obj: Row) => void;
 };
 
-function DataTable({ rows, columns, labels }: DataTableProps) {
+function DataTable({
+  rows,
+  columns,
+  labels,
+  deleteButton = false,
+  onDelete,
+}: DataTableProps) {
   const renderRows = rows.map((row, index) => (
-    <TableRow key={index} row={row} columns={columns} labels={labels} />
+    <TableRow
+      key={index}
+      row={row}
+      columns={columns}
+      labels={labels}
+      deleteButton={deleteButton}
+      onDelete={onDelete}
+    />
   ));
 
   return (
