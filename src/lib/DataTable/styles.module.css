@@ -21,6 +21,7 @@
 .tableRow {
   display: grid;
   background-color: var(--card);
+  overflow: hidden;
 }
 
 .th {
@@ -43,6 +44,7 @@
 }
 
 .cellInput {
+  width: 100%;
   border: 1px solid transparent;
   background-color: transparent;
   color: var(--textAlt);
@@ -63,8 +65,6 @@
 .deleteButton {
   border-radius: 0 !important;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .deleteButton:hover {

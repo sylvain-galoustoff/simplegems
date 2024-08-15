@@ -10,7 +10,7 @@ export type TableRowProps = {
   columns: string[];
   labels: Label;
   deleteButton?: boolean;
-  onDelete?: (obj: Row) => void;
+  onDelete?: (obj: Row) => void | Promise<void>;
 };
 
 function TableRow({

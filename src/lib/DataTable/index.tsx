@@ -39,7 +39,14 @@ function DataTable({
   return (
     <table className={`${styles.dataTable}`}>
       <TableHeader columns={columns} labels={labels} />
-      <tbody className={`${styles.tbody}`}>{renderRows}</tbody>
+      <tbody className={`${styles.tbody}`}>
+        {renderRows}
+        {renderRows}
+        {renderRows}
+        {renderRows}
+        {renderRows}
+        {renderRows}
+      </tbody>
     </table>
   );
 }
