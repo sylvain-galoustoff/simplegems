@@ -14,17 +14,11 @@ export type DataTableProps = {
   rows: Row[];
   columns: string[];
   labels: Label;
-  deleteButton?: boolean;
-  onDelete?: (obj: Row) => void;
+  deleteButton: boolean;
+  onDelete: (row: Row) => void;
 };
 
-function DataTable({
-  rows,
-  columns,
-  labels,
-  deleteButton = false,
-  onDelete,
-}: DataTableProps) {
+function DataTable({ rows, columns, labels, deleteButton, onDelete }: DataTableProps) {
   const renderRows = rows.map((row, index) => (
     <TableRow
       key={index}
@@ -39,14 +33,7 @@ function DataTable({
   return (
     <table className={`${styles.dataTable}`}>
       <TableHeader columns={columns} labels={labels} />
-      <tbody className={`${styles.tbody}`}>
-        {renderRows}
-        {renderRows}
-        {renderRows}
-        {renderRows}
-        {renderRows}
-        {renderRows}
-      </tbody>
+      <tbody className={`${styles.tbody}`}>{renderRows}</tbody>
     </table>
   );
 }

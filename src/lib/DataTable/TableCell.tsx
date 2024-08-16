@@ -7,8 +7,6 @@ export type TableCellProp = {
 };
 
 function TableCell({ field, value }: TableCellProp) {
-  console.log(field);
-
   const updateField: ChangeEventHandler<HTMLInputElement> = (e) => {
     return null;
   };

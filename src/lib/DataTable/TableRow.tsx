@@ -10,16 +10,10 @@ export type TableRowProps = {
   columns: string[];
   labels: Label;
   deleteButton?: boolean;
-  onDelete?: (obj: Row) => void | Promise<void>;
+  onDelete?: (row: Row) => void;
 };
 
-function TableRow({
-  row,
-  columns,
-  labels,
-  deleteButton = false,
-  onDelete,
-}: TableRowProps) {
+function TableRow({ row, columns, deleteButton = false, onDelete }: TableRowProps) {
   const renderCells = columns.map((cell, index) => (
     <TableCell key={index} field={cell} value={row[cell]} />
   ));
