@@ -1,6 +1,6 @@
 {
   "name": "simplegems",
-  "version": "0.0.21",
+  "version": "0.0.24",
   "type": "module",
   "main": "dist/simplegems.umd.js",
   "module": "dist/simplegems.es.js",

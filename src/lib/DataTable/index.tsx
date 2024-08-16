@@ -14,10 +14,10 @@ export type DataTableProps = {
   rows: Row[];
   columns: string[];
   labels: Label;
-  deleteButton: boolean;
-  onDelete: (row: Row) => void;
-  onSubmitField: (row: Row) => void;
-  readOnly: string[];
+  deleteButton?: boolean;
+  onDelete?: (row: Row) => void;
+  onSubmitField?: (row: Row) => void;
+  readOnly?: string[];
 };
 
 function DataTable({
@@ -37,7 +37,7 @@ function DataTable({
       labels={labels}
       deleteButton={deleteButton}
       onDelete={onDelete}
-      readOnly={readOnly}
+      readOnly={readOnly && readOnly}
       onSubmitField={onSubmitField}
     />
   ));

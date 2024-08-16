@@ -6,8 +6,8 @@ export type TableCellProp = {
   row: Row;
   value: string;
   field: string;
-  readOnly: string[];
-  onSubmitField: (row: Row) => void;
+  readOnly?: string[];
+  onSubmitField?: (row: Row) => void;
 };
 
 function TableCell({ row, field, value, readOnly, onSubmitField }: TableCellProp) {
@@ -22,7 +22,7 @@ function TableCell({ row, field, value, readOnly, onSubmitField }: TableCellProp
   }, [isReadOnly]);
 
   const toggleEdit = () => {
-    !readOnly.includes(field) && setIsReadOnly(!isReadOnly);
+    readOnly && !readOnly.includes(field) && setIsReadOnly(!isReadOnly);
   };
 
   const updateField: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -36,6 +36,7 @@ function TableCell({ row, field, value, readOnly, onSubmitField }: TableCellProp
       [field]: inputValue,
     };
     onSubmitField && onSubmitField(newRow);
+    inputRef.current && inputRef.current.blur();
   };
 
   return (
@@ -49,7 +50,7 @@ function TableCell({ row, field, value, readOnly, onSubmitField }: TableCellProp
           onChange={(e) => updateField(e)}
           onClick={toggleEdit}
           onBlur={toggleEdit}
-          readOnly={readOnly.includes(field) && true}
+          readOnly={readOnly && readOnly.includes(field) && true}
         />
       </form>
     </td>

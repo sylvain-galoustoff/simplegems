@@ -11,8 +11,8 @@ export type TableRowProps = {
   labels: Label;
   deleteButton?: boolean;
   onDelete?: (row: Row) => void;
-  onSubmitField: (row: Row) => void;
-  readOnly: string[];
+  onSubmitField?: (row: Row) => void;
+  readOnly?: string[];
 };
 
 function TableRow({
@@ -29,7 +29,7 @@ function TableRow({
       row={row}
       field={cell}
       value={row[cell]}
-      readOnly={readOnly}
+      readOnly={readOnly && readOnly}
       onSubmitField={onSubmitField}
     />
   ));
