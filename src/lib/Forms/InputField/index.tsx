@@ -1,8 +1,8 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEventHandler, FocusEventHandler } from "react";
 import styles from "./styles.module.css";
 
 export type InputFieldProps = {
-  label: string;
+  label?: string;
   id: string;
   type?: "text" | "email" | "tel" | "search" | "password";
   placeholder?: string;
@@ -11,6 +11,7 @@ export type InputFieldProps = {
   iconAfter?: JSX.Element;
   value?: string;
   onChange?: (value: string) => void;
+  isFocused?: (focused: boolean) => void;
 };
 
 function InputField({
@@ -23,6 +24,7 @@ function InputField({
   iconAfter,
   value,
   onChange,
+  isFocused,
 }: InputFieldProps) {
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     if (onChange) {
@@ -30,11 +32,25 @@ function InputField({
     }
   };
 
+  const handleFocus: FocusEventHandler<HTMLInputElement> = () => {
+    if (isFocused) {
+      isFocused(true);
+    }
+  };
+
+  const handleBlur: FocusEventHandler<HTMLInputElement> = () => {
+    if (isFocused) {
+      isFocused(false);
+    }
+  };
+
   return (
     <div className={`${styles.formGroup} ${styles[variant]}`}>
-      <label className={`${styles.label}`} htmlFor={id}>
-        {label}
-      </label>
+      {label && (
+        <label className={`${styles.label}`} htmlFor={id}>
+          {label}
+        </label>
+      )}
       <div className={`${styles.inputGroup}`}>
         {iconBefore && (
           <div className={`${styles.icon} ${styles.before}`}>{iconBefore}</div>
@@ -46,6 +62,8 @@ function InputField({
           id={id}
           value={value && value}
           onChange={handleChange}
+          onFocus={handleFocus} // added onFocus
+          onBlur={handleBlur} // added onBlur
         />
         {iconAfter && <div className={`${styles.icon} ${styles.after}`}>{iconAfter}</div>}
       </div>
