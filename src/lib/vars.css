@@ -22,6 +22,11 @@
   --transitionTime: .15s;
 }
 
+::selection {
+  background-color: var(--primaryHover);
+  color: var(--card)
+}
+
 *,
 *:before,
 *:after {

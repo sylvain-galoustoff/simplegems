@@ -31,8 +31,3 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
-
-::selection {
-  background-color: var(--primaryHover);
-  color: var(--card)
-}
