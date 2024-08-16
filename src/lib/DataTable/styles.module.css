@@ -64,11 +64,6 @@
   outline: none;
 }
 
-.cellInput::selection {
-  background-color: var(--primaryHover);
-  color: var(--card)
-}
-
 .nodata {
   font-style: italic;
 }
