@@ -43,8 +43,13 @@
   padding: 0;
 }
 
+.cellForm {
+  height: 100%;
+}
+
 .cellInput {
   width: 100%;
+  height: 100%;
   border: 1px solid transparent;
   background-color: transparent;
   color: var(--textAlt);
