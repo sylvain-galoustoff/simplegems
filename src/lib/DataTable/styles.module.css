@@ -1,3 +1,8 @@
+::selection {
+  background-color: var(--primary);
+  color: var(--card)
+}
+
 .dataTable {
   border-collapse: collapse;
   width: 100%;
@@ -75,4 +80,12 @@
 .deleteButton:hover {
   background-color: var(--danger);
   color: var(--card);
+}
+
+[readonly] {
+  cursor: initial;
+}
+
+[readonly]:focus {
+  border-color: transparent;
 }

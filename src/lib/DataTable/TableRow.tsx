@@ -11,11 +11,18 @@ export type TableRowProps = {
   labels: Label;
   deleteButton?: boolean;
   onDelete?: (row: Row) => void;
+  readOnly: string[];
 };
 
-function TableRow({ row, columns, deleteButton = false, onDelete }: TableRowProps) {
+function TableRow({
+  row,
+  columns,
+  deleteButton = false,
+  onDelete,
+  readOnly,
+}: TableRowProps) {
   const renderCells = columns.map((cell, index) => (
-    <TableCell key={index} field={cell} value={row[cell]} />
+    <TableCell key={index} field={cell} value={row[cell]} readOnly={readOnly} />
   ));
 
   return (

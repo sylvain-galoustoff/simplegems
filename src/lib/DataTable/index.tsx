@@ -16,9 +16,17 @@ export type DataTableProps = {
   labels: Label;
   deleteButton: boolean;
   onDelete: (row: Row) => void;
+  readOnly: string[];
 };
 
-function DataTable({ rows, columns, labels, deleteButton, onDelete }: DataTableProps) {
+function DataTable({
+  rows,
+  columns,
+  labels,
+  deleteButton,
+  onDelete,
+  readOnly,
+}: DataTableProps) {
   const renderRows = rows.map((row, index) => (
     <TableRow
       key={index}
@@ -27,6 +35,7 @@ function DataTable({ rows, columns, labels, deleteButton, onDelete }: DataTableP
       labels={labels}
       deleteButton={deleteButton}
       onDelete={onDelete}
+      readOnly={readOnly}
     />
   ));
 
