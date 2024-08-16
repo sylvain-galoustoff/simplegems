@@ -5,5 +5,6 @@ export { default as InputField } from "./Forms/InputField";
 export { default as Toaster } from "./Notifications/Toaster";
 export { useToastsList, useToast } from "./Notifications/hooks";
 export { default as DataTable } from "./DataTable";
+export { default as DataSearch } from "./Forms/DataSearch";
 
-export type { ButtonProps } from "./Button";
+// export type { ButtonProps } from "./Button";
