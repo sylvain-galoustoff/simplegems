@@ -11,6 +11,7 @@ export type TableRowProps = {
   labels: Label;
   deleteButton?: boolean;
   onDelete?: (row: Row) => void;
+  onSubmitField: (row: Row) => void;
   readOnly: string[];
 };
 
@@ -20,9 +21,17 @@ function TableRow({
   deleteButton = false,
   onDelete,
   readOnly,
+  onSubmitField,
 }: TableRowProps) {
   const renderCells = columns.map((cell, index) => (
-    <TableCell key={index} field={cell} value={row[cell]} readOnly={readOnly} />
+    <TableCell
+      key={index}
+      row={row}
+      field={cell}
+      value={row[cell]}
+      readOnly={readOnly}
+      onSubmitField={onSubmitField}
+    />
   ));
 
   return (
