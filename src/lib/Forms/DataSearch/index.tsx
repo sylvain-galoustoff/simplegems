@@ -44,7 +44,14 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
 
   const handleClick = (term: string) => {
     setInputValue(term);
+    setShowResult(false);
     callback(term);
+  };
+
+  const cancelSearch = () => {
+    setInputValue("");
+    setFilteredData(data);
+    setShowResult(true);
   };
 
   const renderResults = filteredData.map((result) => (
@@ -52,17 +59,15 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
   ));
 
   return (
-    <div className={styles.dataSearch} id={`${id}-container`} onClick={toggleResults}>
+    <div className={styles.dataSearch} id={`${id}-container`}>
       <InputField
         id={id}
         onChange={handleChange}
+        isFocused={() => setShowResult(true)}
         value={inputValue}
         iconAfter={
           inputValue.length > 0 ? (
-            <IoCloseOutline
-              style={{ cursor: "pointer" }}
-              onClick={() => setInputValue("")}
-            />
+            <IoCloseOutline style={{ cursor: "pointer" }} onClick={cancelSearch} />
           ) : (
             <IoSearchOutline />
           )
