@@ -1,24 +1,47 @@
-import React from "react";
+import { useState } from "react";
 import styles from "./styles.module.css";
+import Option from "./Option";
 
-export type Option = {
+export type OptionType = {
   value: string;
   label: string;
 };
 
-export type SelectType = {
+export type SelectProps = {
   label?: string;
   id: string;
-  data: Option[];
+  placeholder: string;
+  data: OptionType[];
   iconBefore?: JSX.Element;
   iconAfter?: JSX.Element;
+  onChange: (value: OptionType) => void;
 };
 
-function Select({ label, id, data, iconBefore, iconAfter }: SelectType) {
-  const renderOptions = data.map((option) => (
-    <option key={option.value} value={option.value}>
-      {option.label}
-    </option>
+function Select({
+  label,
+  id,
+  data,
+  iconBefore,
+  iconAfter,
+  placeholder,
+  onChange,
+}: SelectProps) {
+  const [selectLabel, setSelectLabel] = useState("");
+  const [showOptions, setShowOptions] = useState(false);
+
+  const handleChange = (option: OptionType) => {
+    setSelectLabel(option.label);
+    onChange(option);
+    setShowOptions(false);
+  };
+
+  const renderOptions = data.map((item) => (
+    <Option
+      key={item.value}
+      value={item.value}
+      label={item.label}
+      onClick={handleChange}
+    />
   ));
 
   return (
@@ -32,9 +55,12 @@ function Select({ label, id, data, iconBefore, iconAfter }: SelectType) {
         {iconBefore && (
           <div className={`${styles.icon} ${styles.before}`}>{iconBefore}</div>
         )}
+        <div className={styles.select} onClick={() => setShowOptions(true)}>
+          {selectLabel ? selectLabel : placeholder}
+        </div>
+        {showOptions && <div className={styles.options}>{renderOptions}</div>}
+        {iconAfter && <div className={`${styles.icon} ${styles.after}`}>{iconAfter}</div>}
       </div>
-      <select id={id}>{renderOptions}</select>
-      {iconAfter && <div className={`${styles.icon} ${styles.after}`}>{iconAfter}</div>}
     </div>
   );
 }

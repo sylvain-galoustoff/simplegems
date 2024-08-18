@@ -1,0 +1,72 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  color: var(--textAlt);
+  font-weight: 700;
+}
+
+.inputGroup {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--textAlt);
+  border: 1px solid var(--bg);
+  border-radius: var(--corner);
+  position: relative;
+}
+
+.inputGroup:focus-within {
+  border-color: var(--primary);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.before {
+  padding-left: 16px;
+}
+
+.after {
+  padding-right: 16px;
+}
+
+.select {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  padding: 16px;
+  font-size: 1rem;
+  color: var(--text);
+  transition: all var(--transitionTime) ease-out;
+  user-select: none;
+  cursor: pointer;
+}
+
+.options {
+  position: absolute;
+  border-radius: var(--corner);
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background-color: var(--card);
+  font-size: 1rem;
+  color: var(--textAlt);
+  overflow: hidden;
+}
+
+.option {
+  padding: 16px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: var(--primary);
+  color: var(--card);
+}
