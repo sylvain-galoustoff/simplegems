@@ -51,7 +51,7 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
   const cancelSearch = () => {
     setInputValue("");
     setFilteredData(data);
-    setShowResult(true);
+    callback("");
   };
 
   const renderResults = filteredData.map((result) => (
