@@ -16,13 +16,10 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
   const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
-    console.log("useEffect");
-
     setFilteredData(data);
   }, [data]);
 
   const toggleResults = () => {
-    setFilteredData(data);
     setShowResult(!showResults);
   };
 

@@ -64,6 +64,7 @@ function InputField({
           onChange={handleChange}
           onFocus={handleFocus} // added onFocus
           onBlur={handleBlur} // added onBlur
+          autoComplete="off"
         />
         {iconAfter && <div className={`${styles.icon} ${styles.after}`}>{iconAfter}</div>}
       </div>
