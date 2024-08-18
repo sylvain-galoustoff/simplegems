@@ -31,7 +31,7 @@ function Select({
 
   const handleChange = (option: OptionType) => {
     setSelectLabel(option.label);
-    onChange(option);
+    onChange && onChange(option);
     setShowOptions(false);
   };
 
