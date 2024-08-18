@@ -57,7 +57,16 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
         id={id}
         onChange={handleChange}
         value={inputValue}
-        iconAfter={<IoSearchOutline />}
+        iconAfter={
+          inputValue.length > 0 ? (
+            <IoCloseOutline
+              style={{ cursor: "pointer" }}
+              onClick={() => setInputValue("")}
+            />
+          ) : (
+            <IoSearchOutline />
+          )
+        }
       />
       {showResults && (
         <div className={styles.results} id={`${id}-results`}>
