@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
 import Option from "./Option";
+import { IoCaretDownOutline } from "react-icons/io5";
 
 export type OptionType = {
   value: string;
@@ -13,7 +14,6 @@ export type SelectProps = {
   placeholder?: string;
   data: OptionType[];
   iconBefore?: JSX.Element;
-  iconAfter?: JSX.Element;
   onChange?: (value: OptionType) => void;
 };
 
@@ -22,7 +22,6 @@ function Select({
   id,
   data,
   iconBefore,
-  iconAfter,
   placeholder = "Make a choice",
   onChange,
 }: SelectProps) {
@@ -59,7 +58,9 @@ function Select({
           {selectLabel ? selectLabel : placeholder}
         </div>
         {showOptions && <div className={styles.options}>{renderOptions}</div>}
-        {iconAfter && <div className={`${styles.icon} ${styles.after}`}>{iconAfter}</div>}
+        <div className={`${styles.icon} ${styles.after}`}>
+          <IoCaretDownOutline />
+        </div>
       </div>
     </div>
   );
