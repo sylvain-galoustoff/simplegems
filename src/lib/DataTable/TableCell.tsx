@@ -16,6 +16,10 @@ function TableCell({ row, field, value, readOnly, onSubmitField }: TableCellProp
   const [inputValue, setInputValue] = useState(value);
 
   useEffect(() => {
+    setInputValue(value);
+  }, [value]);
+
+  useEffect(() => {
     if (!isReadOnly && inputRef.current) {
       inputRef.current.select();
     }

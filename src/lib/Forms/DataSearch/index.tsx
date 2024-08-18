@@ -35,6 +35,7 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
   const handleChange = (term: string) => {
     setShowResult(true);
     setInputValue(term);
+    callback(term);
     const newFilteredData = [...data].filter((item) =>
       item.toLowerCase().includes(term.toLowerCase())
     );
@@ -62,6 +63,7 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
         <div className={styles.results} id={`${id}-results`}>
           <span
             className={`${styles.resultItem} ${styles.resultHeader}`}
+            id={`${id}-results-header`}
             onClick={toggleResults}
           >
             <span>Press [ESC] key or clic here to close</span>
