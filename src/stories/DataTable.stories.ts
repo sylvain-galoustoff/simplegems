@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import DataTable from "../lib/DataTable";
 
 const meta: Meta<typeof DataTable> = {
-  title: "Table de données",
+  title: "DataTable",
   component: DataTable,
   tags: ["autodocs"],
   argTypes: {},
