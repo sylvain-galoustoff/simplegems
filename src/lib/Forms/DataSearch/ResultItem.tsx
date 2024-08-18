@@ -2,15 +2,16 @@ import styles from "./styles.module.css";
 
 export type ResultItemProps = {
   value: string;
-  callback: (value: string) => void;
+  onClick: (value: string) => void;
+  id: string;
 };
 
-function ResultItem({ value, callback }: ResultItemProps) {
+function ResultItem({ value, onClick, id }: ResultItemProps) {
   const handleClick = () => {
-    callback(value);
+    onClick(value);
   };
   return (
-    <span className={styles.resultItem} onClick={handleClick}>
+    <span className={`${styles.resultItem} ${id}-item`} onClick={handleClick}>
       {value}
     </span>
   );

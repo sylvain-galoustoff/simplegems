@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { IoSearchOutline } from "react-icons/io5";
 import InputField from "../InputField";
 import ResultItem from "./ResultItem";
 import styles from "./styles.module.css";
@@ -11,19 +12,50 @@ export type DataSearchProps = {
 
 function DataSearch({ id, data, callback }: DataSearchProps) {
   const [showResults, setShowResult] = useState(false);
+  const [filteredData, setFilteredData] = useState<string[]>([]);
+  const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    console.log("useEffect");
+
+    setFilteredData(data);
+  }, [data]);
 
   const toggleResults = () => {
+    setFilteredData(data);
     setShowResult(!showResults);
   };
 
-  const renderResults = data.map((result) => (
-    <ResultItem key={result} value={result} callback={callback} />
+  const handleChange = (term: string) => {
+    setInputValue(term);
+    const newFilteredData = [...data].filter((item) =>
+      item.toLowerCase().includes(term.toLowerCase())
+    );
+    setFilteredData(newFilteredData);
+  };
+
+  const handleClick = (term: string) => {
+    setInputValue(term);
+    callback(term);
+  };
+
+  const renderResults = filteredData.map((result) => (
+    <ResultItem key={result} value={result} onClick={handleClick} id={id} />
   ));
 
   return (
-    <div className={styles.dataSearch} id={`${id}-containner`} onClick={toggleResults}>
-      <InputField id={id} />
-      {showResults && <div className={styles.results}>{renderResults}</div>}
+    <div className={styles.dataSearch} id={`${id}-container`} onClick={toggleResults}>
+      <InputField
+        id={id}
+        onChange={handleChange}
+        value={inputValue}
+        iconAfter={<IoSearchOutline />}
+      />
+      {showResults && (
+        <div className={styles.results} id={`${id}-results`}>
+          {renderResults}
+        </div>
+      )}
     </div>
   );
 }
