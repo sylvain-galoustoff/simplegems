@@ -66,8 +66,7 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
             id={`${id}-results-header`}
             onClick={toggleResults}
           >
-            <span>Press [ESC] key or clic here to close</span>
-            <IoCloseOutline />
+            Press [ESC] key or clic here to close.
           </span>
           {renderResults}
         </div>
