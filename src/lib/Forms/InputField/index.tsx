@@ -62,8 +62,8 @@ function InputField({
           id={id}
           value={value && value}
           onChange={handleChange}
-          onFocus={handleFocus} // added onFocus
-          onBlur={handleBlur} // added onBlur
+          onFocus={handleFocus}
+          onBlur={handleBlur}
           autoComplete="off"
         />
         {iconAfter && <div className={`${styles.icon} ${styles.after}`}>{iconAfter}</div>}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IoSearchOutline } from "react-icons/io5";
+import { IoCloseOutline, IoSearchOutline } from "react-icons/io5";
 import InputField from "../InputField";
 import ResultItem from "./ResultItem";
 import styles from "./styles.module.css";
@@ -17,6 +17,15 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
 
   useEffect(() => {
     setFilteredData(data);
+    const addCloseListener = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowResult(false);
+    };
+
+    window.addEventListener("keydown", addCloseListener);
+
+    return () => {
+      window.removeEventListener("keydown", addCloseListener);
+    };
   }, [data]);
 
   const toggleResults = () => {
@@ -24,6 +33,7 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
   };
 
   const handleChange = (term: string) => {
+    setShowResult(true);
     setInputValue(term);
     const newFilteredData = [...data].filter((item) =>
       item.toLowerCase().includes(term.toLowerCase())
@@ -50,6 +60,13 @@ function DataSearch({ id, data, callback }: DataSearchProps) {
       />
       {showResults && (
         <div className={styles.results} id={`${id}-results`}>
+          <span
+            className={`${styles.resultItem} ${styles.resultHeader}`}
+            onClick={toggleResults}
+          >
+            <span>Press [ESC] key or clic here to close</span>
+            <IoCloseOutline />
+          </span>
           {renderResults}
         </div>
       )}

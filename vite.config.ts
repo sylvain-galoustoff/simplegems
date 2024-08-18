@@ -18,6 +18,7 @@ export default defineConfig({
     }),
   ],
   build: {
+    minify: false,
     lib: {
       entry: path.resolve(__dirname, "src/lib/index.ts"), // Point d'entrée de la bibliothèque
       name: "MyLib", // Nom global pour les utilisateurs UMD
