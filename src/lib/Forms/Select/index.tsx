@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import Option from "./Option";
 import { IoCaretDownOutline } from "react-icons/io5";
@@ -28,10 +28,26 @@ function Select({
   const [selectLabel, setSelectLabel] = useState("");
   const [showOptions, setShowOptions] = useState(false);
 
+  useEffect(() => {
+    const addCloseListener = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowOptions(false);
+    };
+
+    window.addEventListener("keydown", addCloseListener);
+
+    return () => {
+      window.removeEventListener("keypress", addCloseListener);
+    };
+  }, []);
+
   const handleChange = (option: OptionType) => {
     setSelectLabel(option.label);
     onChange && onChange(option);
     setShowOptions(false);
+  };
+
+  const toggleOptions = () => {
+    setShowOptions(!showOptions);
   };
 
   const renderOptions = data.map((item) => (
@@ -54,7 +70,7 @@ function Select({
         {iconBefore && (
           <div className={`${styles.icon} ${styles.before}`}>{iconBefore}</div>
         )}
-        <div className={styles.select} onClick={() => setShowOptions(true)}>
+        <div className={styles.select} onClick={toggleOptions}>
           {selectLabel ? selectLabel : placeholder}
         </div>
         {showOptions && <div className={styles.options}>{renderOptions}</div>}
