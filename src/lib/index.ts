@@ -6,5 +6,6 @@ export { default as Toaster } from "./Notifications/Toaster";
 export { useToastsList, useToast } from "./Notifications/hooks";
 export { default as DataTable } from "./DataTable";
 export { default as DataSearch } from "./Forms/DataSearch";
+export { default as Select } from "./Forms/Select";
 
 // export type { ButtonProps } from "./Button";

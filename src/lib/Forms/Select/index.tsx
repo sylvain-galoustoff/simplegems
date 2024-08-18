@@ -9,12 +9,12 @@ export type OptionType = {
 
 export type SelectProps = {
   label?: string;
-  id: string;
-  placeholder: string;
+  id?: string;
+  placeholder?: string;
   data: OptionType[];
   iconBefore?: JSX.Element;
   iconAfter?: JSX.Element;
-  onChange: (value: OptionType) => void;
+  onChange?: (value: OptionType) => void;
 };
 
 function Select({
@@ -23,7 +23,7 @@ function Select({
   data,
   iconBefore,
   iconAfter,
-  placeholder,
+  placeholder = "Make a choice",
   onChange,
 }: SelectProps) {
   const [selectLabel, setSelectLabel] = useState("");
