@@ -19,8 +19,10 @@
   position: relative;
 }
 
-.inputGroup:focus-within {
+.inputGroup:focus-within,
+.inputGroup:focus-visible {
   border-color: var(--primary);
+  outline: none;
 }
 
 .icon {
@@ -68,7 +70,9 @@
   cursor: pointer;
 }
 
-.option:hover {
+.option:hover,
+.option:focus-visible {
   background-color: var(--primary);
   color: var(--card);
+  outline: none;
 }

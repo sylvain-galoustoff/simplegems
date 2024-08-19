@@ -13,7 +13,13 @@ function Option({ value, label, onClick }: OptionProps) {
   };
 
   return (
-    <div className={styles.option} onClick={handleClick}>
+    <div
+      role="option"
+      tabIndex={0}
+      className={styles.option}
+      onClick={handleClick}
+      onKeyDown={(e) => e.key === "Enter" && onClick({ value, label })}
+    >
       {label}
     </div>
   );

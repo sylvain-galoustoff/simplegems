@@ -40,6 +40,28 @@ function Select({
     };
   }, []);
 
+  useEffect(() => {
+    if (showOptions) {
+      const handleArrowNavigation = (e: KeyboardEvent) => {
+        const options = document.querySelectorAll(`#${id}-options [role="option"]`);
+        let index = Array.prototype.indexOf.call(options, document.activeElement);
+
+        if (e.key === "ArrowDown") {
+          index = (index + 1) % options.length;
+          (options[index] as HTMLElement).focus();
+        } else if (e.key === "ArrowUp") {
+          index = (index - 1 + options.length) % options.length;
+          (options[index] as HTMLElement).focus();
+        } else if (e.key === "Enter" && index >= 0) {
+          (options[index] as HTMLElement).click();
+        }
+      };
+
+      window.addEventListener("keydown", handleArrowNavigation);
+      return () => window.removeEventListener("keydown", handleArrowNavigation);
+    }
+  }, [showOptions, id]);
+
   const handleChange = (option: OptionType) => {
     setSelectLabel(option.label);
     onChange && onChange(option);
@@ -66,7 +88,15 @@ function Select({
           {label}
         </label>
       )}
-      <div className={`${styles.inputGroup}`} id={`${id}-input-group`}>
+      <div
+        className={`${styles.inputGroup}`}
+        id={`${id}-input-group`}
+        tabIndex={0}
+        onKeyDown={(e) => e.key === "Enter" && toggleOptions()}
+        aria-haspopup="listbox"
+        aria-expanded={showOptions}
+        aria-labelledby={`${id}-label`}
+      >
         {iconBefore && (
           <div className={`${styles.icon} ${styles.before}`} id={`${id}-icon-before`}>
             {iconBefore}
@@ -76,7 +106,12 @@ function Select({
           {selectLabel ? selectLabel : placeholder}
         </div>
         {showOptions && (
-          <div className={styles.options} id={`${id}-options`}>
+          <div
+            className={styles.options}
+            id={`${id}-options`}
+            role="listbox"
+            aria-activedescendant={`${id}-option-${selectLabel}`}
+          >
             {renderOptions}
           </div>
         )}
