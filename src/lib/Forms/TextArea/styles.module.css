@@ -12,7 +12,7 @@
 .input {
   flex: 1;
   background-color: transparent;
-  border: none;
+  border: 1px solid var(--bg);
   padding: 16px;
   font-size: 1rem;
   color: var(--text);

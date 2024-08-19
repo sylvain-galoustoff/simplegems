@@ -52,6 +52,7 @@
 .options {
   position: absolute;
   z-index: 10;
+  border: 1px solid var(--bg);
   border-radius: var(--corner);
   top: calc(100% + 8px);
   left: 0;

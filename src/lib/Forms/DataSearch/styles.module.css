@@ -8,6 +8,7 @@
   background-color: var(--card);
   color: var(--textAlt);
   border-radius: var(--corner);
+  border: 1px solid var(--bg);
   position: absolute;
   z-index: 10;
   top: calc(100% + 8px);
