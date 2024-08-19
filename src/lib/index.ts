@@ -7,5 +7,6 @@ export { useToastsList, useToast } from "./Notifications/hooks";
 export { default as DataTable } from "./DataTable";
 export { default as DataSearch } from "./Forms/DataSearch";
 export { default as Select } from "./Forms/Select";
+export { default as TextArea } from "./Forms/TextArea";
 
 // export type { ButtonProps } from "./Button";
