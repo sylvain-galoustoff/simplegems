@@ -6,8 +6,7 @@ export type TeaxtAreaProps = {
   id: string;
   placeholder?: string;
   variant?: "primary" | "success" | "danger" | "warning";
-  cols: number;
-  rows: number;
+  rows?: number;
   value?: string;
   onChange?: (value: string) => void;
   isFocused?: (focused: boolean) => void;
@@ -16,10 +15,8 @@ export type TeaxtAreaProps = {
 function TextArea({
   label,
   id,
-  placeholder,
   variant,
-  cols,
-  rows,
+  rows = 5,
   value,
   onChange,
   isFocused,
@@ -55,7 +52,6 @@ function TextArea({
       <textarea
         className={`${styles.input}`}
         id={id}
-        cols={cols}
         rows={rows}
         value={value && value}
         onChange={handleChange}

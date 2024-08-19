@@ -1,0 +1,43 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  color: var(--textAlt);
+  font-weight: 700;
+}
+
+.input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  padding: 16px;
+  font-size: 1rem;
+  color: var(--text);
+  transition: all var(--transitionTime) ease-out;
+  border-radius: var(--corner);
+}
+
+.input::placeholder {
+  color: var(--textAlt);
+}
+
+.input:focus,
+.input:focus-visible {
+  border: 1px solid var(--primary);
+  outline: none;
+}
+
+.success .input {
+  border-color: var(--success);
+}
+
+.warning .input {
+  border-color: var(--warning);
+}
+
+.danger .input {
+  border-color: var(--danger);
+}
