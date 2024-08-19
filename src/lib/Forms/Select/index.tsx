@@ -60,20 +60,26 @@ function Select({
   ));
 
   return (
-    <div className={`${styles.formGroup}`}>
+    <div className={`${styles.formGroup}`} id={`${id}-container`}>
       {label && (
-        <label className={`${styles.label}`} htmlFor={id}>
+        <label className={`${styles.label}`} htmlFor={id} id={`${id}-label`}>
           {label}
         </label>
       )}
-      <div className={`${styles.inputGroup}`}>
+      <div className={`${styles.inputGroup}`} id={`${id}-input-group`}>
         {iconBefore && (
-          <div className={`${styles.icon} ${styles.before}`}>{iconBefore}</div>
+          <div className={`${styles.icon} ${styles.before}`} id={`${id}-icon-before`}>
+            {iconBefore}
+          </div>
         )}
-        <div className={styles.select} onClick={toggleOptions}>
+        <div className={styles.select} id={`${id}`} onClick={toggleOptions}>
           {selectLabel ? selectLabel : placeholder}
         </div>
-        {showOptions && <div className={styles.options}>{renderOptions}</div>}
+        {showOptions && (
+          <div className={styles.options} id={`${id}-options`}>
+            {renderOptions}
+          </div>
+        )}
         <div className={`${styles.icon} ${styles.after}`}>
           <IoCaretDownOutline />
         </div>
