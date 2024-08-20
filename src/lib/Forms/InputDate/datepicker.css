@@ -1,0 +1,54 @@
+#sgDatepicker [type="text"] {
+  padding: 16px 16px 16px 44px;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+#sgDatepicker [type="text"]:focus-visible {
+  outline: none;
+}
+
+#sgDatepicker .react-datepicker {
+  border-radius: var(--corner);
+  background-color: var(--card);
+  color: var(--text);
+  border: 1px solid var(--bg);
+}
+
+#sgDatepicker .react-datepicker__navigation {
+  color: var(--textAlt);
+}
+
+#sgDatepicker .react-datepicker__navigation:hover {
+  color: var(--primary);
+}
+
+#sgDatepicker .react-datepicker__header {
+  background-color: var(--cardAlt);
+  border-bottom: 1px solid var(--bg);
+  border-top-left-radius: var(--corner);
+  border-top-right-radius: var(--corner);
+}
+
+#sgDatepicker .react-datepicker__current-month,
+#sgDatepicker .react-datepicker-time__header,
+#sgDatepicker .react-datepicker-year-header {
+  color: var(--text);
+}
+
+#sgDatepicker .react-datepicker__day-name,
+#sgDatepicker .react-datepicker__day,
+#sgDatepicker .react-datepicker__time-name {
+  color: var(--text);
+}
+
+#sgDatepicker .react-datepicker__day--keyboard-selected,
+#sgDatepicker .react-datepicker__month-text--keyboard-selected,
+#sgDatepicker .react-datepicker__quarter-text--keyboard-selected,
+#sgDatepicker .react-datepicker__year-text--keyboard-selected {
+  background-color: var(--primary);
+  border-radius: var(--corner);
+  color: var(--card);
+}

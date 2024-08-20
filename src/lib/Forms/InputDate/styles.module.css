@@ -36,15 +36,3 @@
 .before {
   padding-left: 16px;
 }
-
-#sgDatepicker [type="text"] {
-  padding: 16px 16px 16px 44px;
-  background-color: transparent;
-  border: none;
-  font-size: 1rem;
-  width: 100%;
-}
-
-#sgDatepicker [type="text"]:focus-visible {
-  outline: none;
-}
