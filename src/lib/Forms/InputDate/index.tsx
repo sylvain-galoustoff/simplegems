@@ -13,10 +13,16 @@ registerLocale("fr", fr as Locale);
 export type InputDateProps = {
   label?: string;
   id?: string;
+  onChange?: (date: Date | null) => void;
 };
 
-function InputDate({ label, id }: InputDateProps) {
+function InputDate({ label, id, onChange }: InputDateProps) {
   const [startDate, setStartDate] = useState<Date | null>(new Date());
+
+  const onDateChange = (date: Date | null) => {
+    setStartDate(date);
+    onChange && onChange(date);
+  };
 
   return (
     <div className={`${styles.formGroup}`}>
@@ -31,7 +37,7 @@ function InputDate({ label, id }: InputDateProps) {
         </div>
         <DatePicker
           selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          onChange={(date) => onDateChange(date)}
           locale={fr}
           dateFormat="dd / MM / yyyy"
           placeholderText="jj / mm / aaaa"
