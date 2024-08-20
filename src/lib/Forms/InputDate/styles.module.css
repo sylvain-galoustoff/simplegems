@@ -1,0 +1,50 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  color: var(--textAlt);
+  font-weight: 700;
+}
+
+.inputGroup {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--textAlt);
+  border: 1px solid var(--bg);
+  border-radius: var(--corner);
+  position: relative;
+}
+
+.inputGroup:focus-within {
+  border-color: var(--primary);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.before {
+  padding-left: 16px;
+}
+
+#sgDatepicker [type="text"] {
+  padding: 16px 16px 16px 44px;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+#sgDatepicker [type="text"]:focus-visible {
+  outline: none;
+}

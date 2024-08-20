@@ -1,6 +1,6 @@
 {
   "name": "simplegems",
-  "version": "0.8.5",
+  "version": "0.8.7",
   "type": "module",
   "main": "dist/simplegems.umd.js",
   "module": "dist/simplegems.es.js",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "react": "^18.0.0",
+    "react-datepicker": "^7.3.0",
     "react-dom": "^18.0.0",
     "react-icons": "^5.2.1"
   },
