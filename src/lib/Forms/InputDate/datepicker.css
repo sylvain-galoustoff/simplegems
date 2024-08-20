@@ -32,7 +32,7 @@
 }
 
 #sgDatepicker .react-datepicker__header {
-  background-color: var(--cardAlt);
+  background-color: var(--card);
   border-bottom: 1px solid var(--bg);
   border-top-left-radius: var(--corner);
   border-top-right-radius: var(--corner);
