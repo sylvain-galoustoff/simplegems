@@ -54,6 +54,23 @@
 #sgDatepicker .react-datepicker__month-text--keyboard-selected,
 #sgDatepicker .react-datepicker__quarter-text--keyboard-selected,
 #sgDatepicker .react-datepicker__year-text--keyboard-selected {
+  background-color: var(--primaryHover);
+  border-radius: var(--corner);
+  color: var(--card);
+}
+
+#sgDatepicker .react-datepicker__day--selected,
+#sgDatepicker .react-datepicker__day--in-selecting-range,
+#sgDatepicker .react-datepicker__day--in-range,
+#sgDatepicker .react-datepicker__month-text--selected,
+#sgDatepicker .react-datepicker__month-text--in-selecting-range,
+#sgDatepicker .react-datepicker__month-text--in-range,
+#sgDatepicker .react-datepicker__quarter-text--selected,
+#sgDatepicker .react-datepicker__quarter-text--in-selecting-range,
+#sgDatepicker .react-datepicker__quarter-text--in-range,
+#sgDatepicker .react-datepicker__year-text--selected,
+#sgDatepicker .react-datepicker__year-text--in-selecting-range,
+#sgDatepicker .react-datepicker__year-text--in-range {
   background-color: var(--primary);
   border-radius: var(--corner);
   color: var(--card);
