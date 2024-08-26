@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 export type InputFieldProps = {
   label?: string;
   id: string;
-  type?: "text" | "email" | "tel" | "search" | "password";
+  type?: "text" | "email" | "tel" | "search" | "password" | "number";
   placeholder?: string;
   variant?: "primary" | "success" | "danger" | "warning";
   iconBefore?: JSX.Element;
