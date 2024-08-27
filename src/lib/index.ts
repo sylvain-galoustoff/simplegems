@@ -9,3 +9,4 @@ export { default as DataSearch } from "./Forms/DataSearch";
 export { default as Select } from "./Forms/Select";
 export { default as TextArea } from "./Forms/TextArea";
 export { default as InputDate } from "./Forms/InputDate";
+export { default as TimeField } from "./Forms/TimeField";

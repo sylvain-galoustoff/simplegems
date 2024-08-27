@@ -15,6 +15,7 @@ export type SelectProps = {
   data: OptionType[];
   iconBefore?: JSX.Element;
   onChange?: (value: OptionType) => void;
+  defaultValue?: string;
 };
 
 function Select({
@@ -24,9 +25,14 @@ function Select({
   iconBefore,
   placeholder = "Make a choice",
   onChange,
+  defaultValue,
 }: SelectProps) {
   const [selectLabel, setSelectLabel] = useState("");
   const [showOptions, setShowOptions] = useState(false);
+
+  useEffect(() => {
+    if (defaultValue) setSelectLabel(defaultValue);
+  }, [defaultValue]);
 
   useEffect(() => {
     const addCloseListener = (e: KeyboardEvent) => {
