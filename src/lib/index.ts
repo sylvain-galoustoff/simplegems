@@ -10,3 +10,4 @@ export { default as Select } from "./Forms/Select";
 export { default as TextArea } from "./Forms/TextArea";
 export { default as InputDate } from "./Forms/InputDate";
 export { default as TimeField } from "./Forms/TimeField";
+export { default as DebugDate } from "./Debug/DebugDate";
