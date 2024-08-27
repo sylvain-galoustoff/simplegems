@@ -1,14 +1,11 @@
 import { ChangeEventHandler, FocusEventHandler } from "react";
 import styles from "./styles.module.css";
+import { IoTimeOutline } from "react-icons/io5";
 
 export type TimeFieldProps = {
   label?: string;
   id: string;
-  type?: "text" | "email" | "tel" | "search" | "password" | "number";
-  placeholder?: string;
   variant?: "primary" | "success" | "danger" | "warning";
-  iconBefore?: JSX.Element;
-  iconAfter?: JSX.Element;
   value?: string;
   onChange?: (value: string) => void;
   isFocused?: (focused: boolean) => void;
@@ -17,11 +14,7 @@ export type TimeFieldProps = {
 function TimeField({
   label,
   id,
-  type = "text",
   variant = "primary",
-  placeholder,
-  iconBefore,
-  iconAfter,
   value,
   onChange,
   isFocused,
@@ -52,13 +45,13 @@ function TimeField({
         </label>
       )}
       <div className={`${styles.inputGroup}`} id={`${id}-input-group`}>
-        {iconBefore && (
-          <div className={`${styles.icon} ${styles.before}`}>{iconBefore}</div>
-        )}
+        <div className={`${styles.icon} ${styles.before}`}>
+          <IoTimeOutline />
+        </div>
+
         <input
           className={`${styles.input}`}
-          type={type}
-          placeholder={placeholder}
+          type="time"
           id={id}
           value={value && value}
           onChange={handleChange}
@@ -66,7 +59,6 @@ function TimeField({
           onBlur={handleBlur}
           autoComplete="off"
         />
-        {iconAfter && <div className={`${styles.icon} ${styles.after}`}>{iconAfter}</div>}
       </div>
     </div>
   );
