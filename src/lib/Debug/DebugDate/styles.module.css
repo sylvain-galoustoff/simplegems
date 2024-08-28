@@ -43,6 +43,8 @@
 .yearMonthDay {
   display: flex;
   gap: 4px;
+  background-color: var(--bg);
+  padding: 4px;
 }
 
 .input {
