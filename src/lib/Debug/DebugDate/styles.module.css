@@ -11,12 +11,38 @@
   align-items: center;
 }
 
+.inputSelector {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  color: var(--textAlt);
+  display: flex;
+  gap: 16px;
+  transform: translateY(-110%);
+  cursor: pointer;
+}
+
+.inputSelector p {
+  margin: 0;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.inputSelector p.active {
+  color: var(--primary);
+}
+
 .debugPart {
   flex: 1;
+}
 
-  p {
-    margin: 0;
-  }
+.debugPart p {
+  margin: 0;
+}
+
+.yearMonthDay {
+  display: flex;
+  gap: 4px;
 }
 
 .input {

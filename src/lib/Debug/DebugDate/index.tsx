@@ -1,34 +1,37 @@
+import InputTimestamp from "./InputTimestamp";
+import InputYearMonthDay from "./InputYearMonthDay";
 import styles from "./styles.module.css";
-import { ChangeEventHandler, useEffect, useState } from "react";
+import { useState } from "react";
 
-export type DebugDateProps = {
-  input: string | number | Date;
-};
-
-function DebugDate({}: DebugDateProps) {
-  const [input, setInput] = useState("");
+function DebugDate() {
+  const [inputFormat, setInputFormat] = useState("timestamp");
   const [dateObject, setDateObject] = useState(new Date());
-
-  useEffect(() => {
-    const newDateObject = new Date(Number(input));
-    setDateObject(newDateObject);
-  }, [input]);
-
-  const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setInput(e.target.value);
-  };
 
   return (
     <div className={styles.debugDate}>
-      <div className={styles.debugPart}>
-        <input
-          className={styles.input}
-          placeholder="Timestamp"
-          type="text"
-          value={input}
-          onChange={handleChange}
-        />
+      <div className={styles.inputSelector}>
+        <p
+          className={inputFormat === "timestamp" ? styles.active : undefined}
+          onClick={() => setInputFormat("timestamp")}
+        >
+          Timestamp
+        </p>
+        <p
+          className={inputFormat === "yearmonthday" ? styles.active : undefined}
+          onClick={() => setInputFormat("yearmonthday")}
+        >
+          Year, day, month
+        </p>
       </div>
+
+      {inputFormat === "timestamp" && (
+        <InputTimestamp inputChange={(dateObj) => setDateObject(dateObj)} />
+      )}
+
+      {inputFormat === "yearmonthday" && (
+        <InputYearMonthDay inputChange={(dateObj) => setDateObject(dateObj)} />
+      )}
+
       <div className={styles.debugPart}>
         <p className={styles.partTitle}>Date object</p>
         <p className={styles.result}>{dateObject.toString()}</p>
