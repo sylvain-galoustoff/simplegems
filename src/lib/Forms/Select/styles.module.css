@@ -63,6 +63,8 @@
   font-size: 1rem;
   color: var(--textAlt);
   overflow: hidden;
+  height: 170px;
+  overflow-y: auto;
 }
 
 .option {
