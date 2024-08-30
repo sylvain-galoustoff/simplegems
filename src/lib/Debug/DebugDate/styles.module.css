@@ -4,23 +4,56 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  transition: all .15s ease-out;
+}
+
+.debugDate.hide {
+  bottom: -90px;
+}
+
+.debugDate .showButton {
+  transition: all .15s ease-out;
+}
+
+.debugDate.show .showButton {
+  transform: rotate(180deg);
+}
+
+.actions {
+  color: var(--textAlt);
+  display: flex;
+  gap: 16px;
+  padding: 0 16px;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: var(--card);
+}
+
+.actionsLeft,
+.actionsRight {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+  align-items: center;
+}
+
+.actions p {
+  margin: 0;
+  color: var(--textAlt);
+}
+
+.actions p.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.debugContent {
   background-color: var(--text);
   color: var(--card);
   padding: 16px;
   display: flex;
   gap: 16px;
   align-items: center;
-}
-
-.inputSelector {
-  position: absolute;
-  top: 0;
-  left: 16px;
-  color: var(--textAlt);
-  display: flex;
-  gap: 16px;
-  transform: translateY(-110%);
-  cursor: pointer;
 }
 
 .inputSelector p {
@@ -44,7 +77,6 @@
 .yearMonthDay {
   display: flex;
   gap: 4px;
-  background-color: var(--bg);
   padding: 4px;
 }
 
