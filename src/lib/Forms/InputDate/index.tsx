@@ -13,11 +13,14 @@ registerLocale("fr", fr as Locale);
 export type InputDateProps = {
   label?: string;
   id?: string;
+  defaultValue: Date;
   onChange?: (date: Date) => void;
 };
 
-function InputDate({ label, id, onChange }: InputDateProps) {
-  const [startDate, setStartDate] = useState<Date>(new Date());
+function InputDate({ label, id, defaultValue, onChange }: InputDateProps) {
+  const [startDate, setStartDate] = useState<Date>(
+    defaultValue ? defaultValue : new Date()
+  );
 
   const onDateChange = (date: Date | null) => {
     date && setStartDate(date);
