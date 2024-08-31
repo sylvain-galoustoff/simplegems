@@ -31,7 +31,12 @@ function SliderSelect({ id, label, options }: SliderSelectProps) {
   };
 
   const renderOptions = options.map((option, index) => (
-    <p key={index} className={styles.option} data-value={option.value}>
+    <p
+      key={index}
+      className={styles.option}
+      style={{ opacity: index === slideIndex ? 1 : 0 }}
+      data-value={option.value}
+    >
       {option.label}
     </p>
   ));
